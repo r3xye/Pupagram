@@ -1,0 +1,198 @@
+2026-05-13 09:48:27,407 - INFO - База данных инициализирована: /home/r3xye/messenger/messenger.db
+Exception in thread Thread-1 (start_http_server):
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.14/threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r3xye/messenger/launcher.py", line 58, in start_http_server
+    server = HTTPServer(('localhost', port), QuietHTTPRequestHandler)
+  File "/usr/lib/python3.14/socketserver.py", line 457, in __init__
+    self.server_bind()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/http/server.py", line 148, in server_bind
+    socketserver.TCPServer.server_bind(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/socketserver.py", line 478, in server_bind
+    self.socket.bind(self.server_address)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 98] Address already in use
+2026-05-13 09:48:28,409 - INFO - База данных инициализирована: /home/r3xye/messenger/messenger.db
+2026-05-13 09:48:28,409 - INFO - Запуск сервера на ws://0.0.0.0:8765
+2026-05-13 09:48:28,411 - INFO - server listening on 0.0.0.0:8765
+2026-05-13 09:48:28,412 - INFO - Сервер запущен и ожидает подключений...
+2026-05-13 09:48:28,412 - INFO - База данных: /home/r3xye/messenger/messenger.db
+2026-05-13 09:54:02,024 - INFO - connection open
+2026-05-13 09:54:02,036 - INFO - Клиент Bob подключился. Всего клиентов: 1
+2026-05-13 09:54:12,903 - INFO - connection open
+2026-05-13 09:54:12,914 - INFO - Клиент Alice подключился. Всего клиентов: 2
+2026-05-13 09:55:16,106 - INFO - Сообщение от Alice к Bob: ку...
+2026-05-13 09:55:25,757 - INFO - Сообщение от Bob к Alice: здарова гандоонннн...
+2026-05-13 09:55:31,015 - INFO - Сообщение от Alice к Bob: ебааать...
+2026-05-13 09:55:40,215 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 09:55:40,215 - INFO - Клиент Alice отключился. Осталось клиентов: 0
+2026-05-13 09:55:40,215 - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/home/r3xye/messenger/venv/lib/python3.14/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/home/r3xye/messenger/server.py", line 410, in handle_client
+    await unregister_client(username)
+  File "/home/r3xye/messenger/server.py", line 192, in unregister_client
+    await broadcast_user_status(username, 'offline')
+  File "/home/r3xye/messenger/server.py", line 206, in broadcast_user_status
+    for user, ws in clients.items():
+                    ~~~~~~~~~~~~~^^
+RuntimeError: dictionary changed size during iteration
+2026-05-13 10:05:21,727 - INFO - connection open
+2026-05-13 10:05:21,830 - INFO - Клиент Alice подключился. Всего клиентов: 1
+2026-05-13 10:05:26,672 - INFO - connection open
+2026-05-13 10:05:26,677 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 10:09:58,071 - INFO - Клиент Alice отключился. Осталось клиентов: 1
+2026-05-13 10:09:58,071 - INFO - Клиент Bob отключился. Осталось клиентов: 0
+2026-05-13 10:09:58,071 - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/home/r3xye/messenger/venv/lib/python3.14/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/home/r3xye/messenger/server.py", line 410, in handle_client
+    await unregister_client(username)
+  File "/home/r3xye/messenger/server.py", line 192, in unregister_client
+    await broadcast_user_status(username, 'offline')
+  File "/home/r3xye/messenger/server.py", line 206, in broadcast_user_status
+    for user, ws in clients.items():
+                    ~~~~~~~~~~~~~^^
+RuntimeError: dictionary changed size during iteration
+2026-05-13 10:15:32,681 - INFO - connection open
+2026-05-13 10:15:32,685 - INFO - Клиент Alice подключился. Всего клиентов: 1
+2026-05-13 10:15:37,677 - INFO - connection open
+2026-05-13 10:15:37,686 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 10:16:17,224 - INFO - Сообщение от Bob к Alice: ку...
+2026-05-13 10:16:23,171 - INFO - Сообщение от Alice к Bob: здарова...
+2026-05-13 10:16:24,492 - INFO - Клиент Alice отключился. Осталось клиентов: 1
+2026-05-13 10:16:24,492 - INFO - Клиент Bob отключился. Осталось клиентов: 0
+2026-05-13 10:16:24,493 - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/home/r3xye/messenger/venv/lib/python3.14/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/home/r3xye/messenger/server.py", line 410, in handle_client
+    await unregister_client(username)
+  File "/home/r3xye/messenger/server.py", line 192, in unregister_client
+    await broadcast_user_status(username, 'offline')
+  File "/home/r3xye/messenger/server.py", line 206, in broadcast_user_status
+    for user, ws in clients.items():
+                    ~~~~~~~~~~~~~^^
+RuntimeError: dictionary changed size during iteration
+2026-05-13 10:22:13,995 - INFO - connection open
+2026-05-13 10:22:13,999 - INFO - Клиент Alice подключился. Всего клиентов: 1
+2026-05-13 10:22:19,134 - INFO - connection open
+2026-05-13 10:22:19,143 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 10:26:18,657 - INFO - Клиент Alice отключился. Осталось клиентов: 1
+2026-05-13 10:26:18,658 - INFO - Клиент Bob отключился. Осталось клиентов: 0
+2026-05-13 10:26:18,658 - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/home/r3xye/messenger/venv/lib/python3.14/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/home/r3xye/messenger/server.py", line 410, in handle_client
+    await unregister_client(username)
+  File "/home/r3xye/messenger/server.py", line 192, in unregister_client
+    await broadcast_user_status(username, 'offline')
+  File "/home/r3xye/messenger/server.py", line 206, in broadcast_user_status
+    for user, ws in clients.items():
+                    ~~~~~~~~~~~~~^^
+RuntimeError: dictionary changed size during iteration
+2026-05-13 10:26:25,289 - INFO - connection open
+2026-05-13 10:26:25,292 - INFO - Клиент Alice подключился. Всего клиентов: 1
+2026-05-13 10:26:30,286 - INFO - connection open
+2026-05-13 10:26:30,291 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 10:27:00,773 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 10:27:00,819 - INFO - connection open
+2026-05-13 10:27:00,824 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 10:27:04,100 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 10:27:04,147 - INFO - connection open
+2026-05-13 10:27:04,164 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 10:32:46,134 - INFO - Клиент Alice отключился. Осталось клиентов: 1
+2026-05-13 10:32:46,361 - INFO - connection open
+2026-05-13 10:32:46,367 - INFO - Клиент Alice подключился. Всего клиентов: 2
+2026-05-13 10:32:50,553 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 10:32:50,599 - INFO - connection open
+2026-05-13 10:32:50,612 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 10:43:35,567 - INFO - Клиент Alice отключился. Осталось клиентов: 1
+2026-05-13 10:43:35,567 - INFO - Клиент Bob отключился. Осталось клиентов: 0
+2026-05-13 10:43:35,567 - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/home/r3xye/messenger/venv/lib/python3.14/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/home/r3xye/messenger/server.py", line 410, in handle_client
+    await unregister_client(username)
+  File "/home/r3xye/messenger/server.py", line 192, in unregister_client
+    await broadcast_user_status(username, 'offline')
+  File "/home/r3xye/messenger/server.py", line 206, in broadcast_user_status
+    for user, ws in clients.items():
+                    ~~~~~~~~~~~~~^^
+RuntimeError: dictionary changed size during iteration
+2026-05-13 12:45:10,990 - INFO - connection open
+2026-05-13 12:45:10,998 - INFO - Клиент Alice подключился. Всего клиентов: 1
+2026-05-13 12:45:15,747 - INFO - connection open
+2026-05-13 12:45:15,756 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 12:45:32,569 - INFO - Сообщение от Bob к Alice: hi...
+2026-05-13 12:57:35,037 - INFO - connection open
+2026-05-13 12:57:35,046 - INFO - Клиент Alice подключился. Всего клиентов: 2
+2026-05-13 12:57:35,989 - INFO - connection open
+2026-05-13 12:57:35,998 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 12:57:54,493 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 12:57:54,542 - INFO - connection open
+2026-05-13 12:57:54,549 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 12:57:55,341 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 12:57:55,375 - INFO - connection open
+2026-05-13 12:57:55,389 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 12:58:00,381 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 12:58:00,427 - INFO - connection open
+2026-05-13 12:58:00,448 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 12:58:02,060 - INFO - Клиент Alice отключился. Осталось клиентов: 1
+2026-05-13 12:58:02,109 - INFO - connection open
+2026-05-13 12:58:02,115 - INFO - Клиент Alice подключился. Всего клиентов: 2
+2026-05-13 12:58:03,328 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 12:58:04,973 - INFO - Клиент Alice отключился. Осталось клиентов: 0
+2026-05-13 12:58:07,850 - INFO - connection open
+2026-05-13 12:58:07,856 - INFO - Клиент Bob подключился. Всего клиентов: 1
+2026-05-13 12:58:08,971 - INFO - Клиент Bob отключился. Осталось клиентов: 0
+2026-05-13 12:58:33,829 - INFO - connection open
+2026-05-13 12:58:35,476 - INFO - Клиент User подключился. Всего клиентов: 1
+2026-05-13 12:58:36,790 - INFO - Клиент User отключился. Осталось клиентов: 0
+2026-05-13 12:58:36,814 - INFO - connection open
+2026-05-13 12:58:39,333 - INFO - Клиент User подключился. Всего клиентов: 1
+2026-05-13 12:58:41,498 - INFO - Клиент User отключился. Осталось клиентов: 0
+2026-05-13 12:59:37,298 - INFO - connection open
+2026-05-13 12:59:37,303 - INFO - Клиент Alice подключился. Всего клиентов: 1
+2026-05-13 12:59:42,195 - INFO - connection open
+2026-05-13 12:59:42,205 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 13:00:30,809 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 13:00:30,855 - INFO - connection open
+2026-05-13 13:00:30,865 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 13:00:57,303 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 13:00:57,351 - INFO - connection open
+2026-05-13 13:00:57,366 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 13:01:12,344 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 13:01:12,388 - INFO - connection open
+2026-05-13 13:01:12,402 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 13:01:20,389 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 13:01:20,430 - INFO - connection open
+2026-05-13 13:01:20,436 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 13:01:35,102 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 13:01:35,143 - INFO - connection open
+2026-05-13 13:01:35,148 - INFO - Клиент Bob подключился. Всего клиентов: 2
+2026-05-13 13:01:44,187 - INFO - Клиент Bob отключился. Осталось клиентов: 1
+2026-05-13 13:01:44,187 - INFO - Клиент Alice отключился. Осталось клиентов: 0
+2026-05-13 13:01:44,187 - ERROR - connection handler failed
+Traceback (most recent call last):
+  File "/home/r3xye/messenger/venv/lib/python3.14/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/home/r3xye/messenger/server.py", line 410, in handle_client
+    await unregister_client(username)
+  File "/home/r3xye/messenger/server.py", line 192, in unregister_client
+    await broadcast_user_status(username, 'offline')
+  File "/home/r3xye/messenger/server.py", line 206, in broadcast_user_status
+    for user, ws in clients.items():
+                    ~~~~~~~~~~~~~^^
+RuntimeError: dictionary changed size during iteration

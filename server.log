@@ -1,0 +1,15 @@
+/home/r3xye/messenger/server.py:14: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+  from websockets.server import WebSocketServerProtocol
+2026-05-13 09:28:54,503 - INFO - База данных инициализирована: /home/r3xye/messenger/messenger.db
+2026-05-13 09:28:54,503 - INFO - Запуск сервера на ws://0.0.0.0:8765
+2026-05-13 09:28:54,504 - INFO - server listening on 0.0.0.0:8765
+2026-05-13 09:28:54,504 - INFO - Сервер запущен и ожидает подключений...
+2026-05-13 09:28:54,504 - INFO - База данных: /home/r3xye/messenger/messenger.db
+2026-05-13 09:29:05,799 - INFO - connection open
+2026-05-13 09:29:05,802 - INFO - Клиент TestUser подключился. Всего клиентов: 1
+2026-05-13 09:29:05,803 - ERROR - Ошибка обработки сообщения: received 1000 (OK); then sent 1000 (OK)
+2026-05-13 09:29:05,803 - INFO - Соединение закрыто для TestUser
+2026-05-13 09:29:05,803 - INFO - Клиент TestUser отключился. Осталось клиентов: 0
+2026-05-13 09:31:31,844 - INFO - connection open
+2026-05-13 09:31:31,856 - INFO - Клиент Alice подключился. Всего клиентов: 1
+2026-05-13 09:31:43,909 - INFO - Клиент Alice отключился. Осталось клиентов: 0

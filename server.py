@@ -283,7 +283,7 @@ async def get_online_users():
     return list(clients.keys())
 
 
-async def handle_client(websocket: WebSocketServerProtocol, path: str):
+async def handle_client(websocket: WebSocketServerProtocol):
     """Обрабатывает подключение клиента"""
     username = None
     
