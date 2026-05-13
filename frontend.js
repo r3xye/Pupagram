@@ -5,7 +5,9 @@ let reconnectInterval = null;
 let onlineUsers = [];
 
 function connectWebSocket() {
-  ws = new WebSocket('ws://localhost:8765');
+  // Автоматически определяем хост (работает и локально, и в сети)
+  const wsHost = window.location.hostname || 'localhost';
+  ws = new WebSocket(`ws://${wsHost}:8765`);
   
   ws.onopen = () => {
     console.log('✅ Connected to server');

@@ -55,8 +55,8 @@ class QuietHTTPRequestHandler(SimpleHTTPRequestHandler):
 
 def start_http_server(port=8000):
     """Запускает HTTP сервер"""
-    server = HTTPServer(('localhost', port), QuietHTTPRequestHandler)
-    print(f"🌐 HTTP сервер запущен на http://localhost:{port}")
+    server = HTTPServer(('0.0.0.0', port), QuietHTTPRequestHandler)
+    print(f"🌐 HTTP сервер запущен на http://0.0.0.0:{port}")
     server.serve_forever()
 
 # Запускаем HTTP сервер в отдельном потоке
@@ -73,16 +73,35 @@ ws_thread = threading.Thread(target=start_websocket_server, daemon=True)
 ws_thread.start()
 time.sleep(2)
 
+# Получаем локальный IP
+import socket
+def get_local_ip():
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        ip = s.getsockname()[0]
+        s.close()
+        return ip
+    except:
+        return "127.0.0.1"
+
+local_ip = get_local_ip()
+
 print()
 print("=" * 60)
 print("✅ Мессенджер запущен!")
 print("=" * 60)
 print()
-print("📱 Откройте в браузере:")
+print("📱 Локально (на этом компьютере):")
 print()
 print("   Alice:   http://localhost:8000/frontend.html?user=Alice")
 print("   Bob:     http://localhost:8000/frontend.html?user=Bob")
-print("   Charlie: http://localhost:8000/frontend.html?user=Charlie")
+print()
+print("🌐 Для друзей в локальной сети:")
+print()
+print(f"   http://{local_ip}:8000/frontend.html?user=ИмяДруга")
+print()
+print(f"   Пример: http://{local_ip}:8000/frontend.html?user=Charlie")
 print()
 print("💾 База данных: messenger.db")
 print("📋 Все сообщения сохраняются автоматически")
